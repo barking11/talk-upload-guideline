@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Talk国际短剧上传注意事项</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ac6b9283-791e-4336-a9f0-88ad2523d365" class="page sans"><header><h1 class="page-title">Talk国际短剧上传注意事项</h1><p class="page-description"></p></header><div class="page-body"><p id="ccbcc001-e07b-4ff2-9b39-bbc19c8eaa54" class="">Talk国际短剧在众多内容平台中，算是最严格的平台，只要系统检测到违规就会惩罚。而一些平台的违禁词敏感词真的不太好发现，有时候可能就是因为一个小小的词汇，就导致短剧违规，甚至是限流</p><p id="ec5974f2-7ff9-4840-b57a-643ce7eb2ed5" class="">那应该怎么有效规避违反社区规格以及敏感词呢？下方给大家罗列一下最新的社区规则以及所有类型的违禁词，被限流的同学自查，记得点赞收藏</p><h2 id="0965b450-6509-4714-b5a8-094a86ec5225" class=""><strong>Talk国际版上传注意事项</strong></h2><p id="4f7ebf3e-ffa9-4ea7-b8b8-cd6136817527" class=""><strong>虚构体验、夸大其词、低质创作、短剧过度P图、素材搬运、诱导行为、导流行为、拉踩行为，这八点都将纳入重点监测范围</strong></p><p id="ff96a176-a8be-4b8c-b377-07090240b9c1" class=""><strong>案例:</strong>短剧使用“当妈才知道”、“我女儿”这类拟人的视角去介绍使用产品后的体验，在专业号短剧规则中是不允许的</p><p id="0725f079-0874-4735-ba19-4d1cf972f474" class=""><strong>正确做法:</strong>如果是专业号复制转发了素人或达人的短剧内容，必须在文中@原作者</p><p id="722f03cc-90a5-4bf8-af95-ab6a544bda42" class=""><strong>虚构体验-专业号违规转载/伪造体验</strong></p><p id="6463100a-4212-4fd2-9a21-de2aab62b71c" class=""><strong>案例:短剧中存在非自身经历的伪造分享，出现短剧内容与账号本人身份不相符的情况，使可信度大打折扣</strong></p><h3 id="4a606902-fbef-4cab-8bd8-d59ff7fc1cc9" class="">夸大其词</h3><p id="dad15749-935f-4349-be18-a1a74f86c79b" class=""><strong>案例:</strong>封面或标题中刻意使用夸张失真、博人眼球、价值观导向不良的表述进行产品推荐</p><p id="b614c51a-f02b-45ee-821b-dc30c4f57e74" class="">类型一:不良导向短剧标题或封面存在过度取悦异性、贬低女性友情等价值观问题，制造噱头，吸引眼球</p><p id="61b83ca9-3fec-4daf-aafc-5b268e6e98af" class=""><strong>类型二:</strong>故弄玄虚 短剧采用“千万不要买”、“买了后悔”、“我后悔买”等标题，让人误认为良心避雷贴，但点击后才发觉是种草文而非吐槽的本质</p><p id="92d36573-f831-4d6c-a51e-64a7c05dc88f" class=""><strong>短剧过度P图-不合理对比暗示</strong></p><p id="ce83cfbe-de22-4758-a036-a0683ada7f35" class="">案例:为凸显产品效果，用诸如几年前几年后、妆前妆后、与他人做对比等方式暗示产品功效，但非产品真实功效，有偷换概念、混淆试听的意图，常见于美白、抗老等合作产品效果展示。这种只要不太过分，一般不会被限流，但如果被人工判定违规基本不接受捞回，自行把握度</p><p id="b1b74149-9d07-4ad3-85c6-b1925e0f1f61" class=""><strong>虚构体验-图文直发</strong></p><p id="76015431-f859-4063-bd16-3718617bed27" class=""><strong>案例:</strong>博主直接使用品牌方生产的内容，伪装成自身真实消费体验进行图文直发的行为。该行为属于虚假种草，存在欺骗诱导用户的嫌疑</p><p id="cf65816e-6511-4c48-8337-d75c2259af37" class=""><strong>案例:</strong>封面几篇不同博主短剧出现相似或相同的人脸图</p><p id="260af2c0-86a5-4430-aca9-6e931cae93ed" class=""><strong>导流行为-二维码展示</strong></p><p id="aeaa16ce-fade-49aa-8812-60cd30bbd0d3" class=""><strong>案例:</strong>在短剧图片中露出二维码，明示或暗示用户可通过扫码进入其他平台进行浏览或关注</p><p id="32601955-bf33-4b47-a099-9aa4b116f2fe" class=""><strong>导流行为-竞品导流</strong></p><p id="a580bc5b-ad46-4385-9775-a30fd6408cc3" class=""><strong>案例:</strong>通过评论区或私信回复，“淘宝、天猫旗舰店”及其变体字形式，将用户导流至其他平台。竞品范围包括但不限于淘宝、京东、得物等电商平台，B站、微博、抖音等社交媒体平台</p><p id="00af7feb-37f2-4386-a173-9fd23aacd59e" class="">用谐音字表情符合去引导，不要过分明显，评论区不要回复一模一样的内容，不要提及竞品平台的名字</p><p id="edce2f6c-cb00-42f2-ada1-a70ebb01664e" class=""><strong>拉踩行为-通过刻意攀附/拉踩/贬低，大牌带小牌凸显特定品牌</strong></p><p id="40372fc6-97ae-4c2a-b5d5-dfedb8b95012" class=""><strong>案例:</strong>将不同品牌产品放在一起对比，模糊描述其他品牌的货源，并刻意突出自身的货源更加优质，来抬高自己。突出自己的成分，却给其他品牌打出负面评价</p><p id="7631900a-8b72-4b3b-8c03-b04afca3073a" class="">自己的账户内容中少提及同行竞品的名称，可以模糊处理，比如这一行经常有什么问题，我们为了避免做了哪些优化，是我们的竞争力</p><p id="457ea5a0-66e2-47cf-9c9e-af520e5f82d0" class=""><strong>诱导行为-利益诱导</strong></p><p id="270f1a26-548c-4eae-b51b-3bd7d136d071" class=""><strong>案例:</strong>通过抽奖送礼的方式，来诱导用户进行点赞、评论、收藏、分享、发文、关注等行为。违规内容除直接要求用户点赞+评论+收藏等，还包括“在评论区抽取XX位幸运用户”等变相诱导用户评论的行为。</p><p id="9a514c25-2138-4214-b800-e1b6eff60d5a" class="">只有引导私信的不算违规！</p><h2 id="d1ce9a9e-41ee-4f1f-9141-6a44d29a51ba" class=""><strong>违禁词汇总</strong></h2><p id="95d40eb2-63a3-4daa-ad69-9f3925238655" class=""><strong>与[极]有关的词汇</strong></p><p id="c2432899-ed87-429f-b439-025f57b9efda" class="">极致、极品、极佳、终极、致极、国际级、世界级、全球级、千万级、特级、宇宙级等</p><p id="ed96437c-742c-4a45-95eb-e75c6a3593d3" class=""><strong>与[最]有关的词汇</strong></p><p id="72d55737-7513-4361-a9fd-6185151c5bd3" class="">最佳、最具、最优、最好最高级、最低、最最最便宜、最受欢迎、最时尚、最舒适、最后、新、最爱、最大、最高档、最聚拢、最先、赚、最奢侈、最流行、最符合、最先进等</p><p id="a082e8df-b873-46bb-8ec2-c175d2092710" class=""><strong>与[极限词/夸张词]有关的词汇</strong></p><p id="a3b4c88a-82f0-4ef4-b2a5-3be0e6aab520" class="">顶级(顶尖/尖端顶级享受、高级、极品极佳(绝佳/绝对)终极、极致、致极、极具.完美、至、至尊、至臻、臻品、臻致、臻席、压轴、问鼎、空前、绝后、绝版、无双、非此莫属、巅峰、前所未有、无人能及、顶级、鼎级、鼎冠、定鼎、完美、翘楚之作、不可再生.不可复制、绝无仅有、寸土寸金、淋漓尽致、无与伦比、唯一、卓越、卓著等</p><p id="ebc15d35-7a37-41d4-ab01-6aa71bf6b027" class=""><strong>与[承诺/保证]有关的词汇</strong></p><p id="d7fdc625-2fa7-4942-abf4-7be935a003eb" class="">无效退款、不满意退款(符合真实性的情况下可使用)、零风险、特效、强效、速效、保证彻底解决、1天见效、100%有效、无依赖、无副作用、彻底消除/清除等</p><p id="bbdee3b8-c98e-40ed-881d-d2f526e41083" class=""><strong>与[迷信]有关的词汇</strong></p><p id="fc4ba051-d0a5-4594-a02f-072defceae3d" class="">带来好运气，增强第六感、化解小人、增加事业运、招财进宝、健康富贵、提升运气、有助事业、护身、平衡正负能量、消除精神压力、调和气压、逢凶化吉、时来运转、万事亨通旺人、旺财、助吉避凶等</p><p id="276a9430-b221-454d-8c1b-f7ee3e2e9388" class=""><strong>与[一]有关的词汇</strong></p><p id="9c66b28a-358b-4532-9650-905b5d8e80b4" class="">一、中国第一、全网第一、销量第一、排名天装装发、仅此一过、一、唯一、第一品牌、NO.1、TOP.1、独一无二、全国第一、仅此一次、仅此一款、最后一波等</p><p id="e29e7014-1b30-4625-a900-9bb223788c28" class=""><strong>与[首/家/国]有关的词汇</strong></p><p id="eb249969-d958-44a2-9f12-a5f6681b61a0" class="">首个、首选、独家、独家配方、全网首发、全国首发、XX网独家、首次、首款、全国销量冠军、国家级产品、国家(国家免检) 、国家领导人、填补国内空白、中国驰名 (驰名商标)国际品质等</p><p id="97e1d8f8-93d9-4b66-bd4f-74b8c912d857" class=""><strong>与虚假用语，有关的词汇</strong></p><p id="d0b79037-cf71-4932-bbaa-91fd2c22bc3f" class="">永久、万能、特效、无敌、纯天然、100%、高档、正品、真皮、超赚、精准、史无前例.前无古人等</p><p id="e9eb2a07-941b-4fd6-905b-326027d794d0" class=""><strong>与[涉嫌欺诈消费者]有关的词汇</strong></p><p id="1fafb8f7-6956-4018-b034-d011b9be9855" class="">点击领奖、恭喜获奖、全民免单、点击获取点击转身、点击有惊喜、点击试穿、点击翻转抢爆、万人疯抢、领取奖品、卖疯了、再不抢就没了、不会更便宜了、万人疯抢、全民疯抢错过就没机会了、全民抢购、抢疯了等</p><p id="0128d5cd-bb0e-489a-aaa0-c8249567137c" class=""><strong>与[品牌用语]有关的词汇</strong></p><p id="e1b75fdf-8bde-43f0-ac47-87755b690842" class="">大牌、金牌、名牌、王牌、领袖品牌、至尊巅峰、奢侈、优秀、领导者、缔造者、创领品牌、领先上市、巨星、著名、掌门人、资深领袖、之王、王者、冠军、世界领先、遥遥领先等</p><p id="65be6e9b-03b6-4059-ac4e-dfbf0e4afcb7" class=""><strong>与[权威性]有关的词汇</strong></p><p id="f38d803c-79f7-4b0d-92f7-6241ad3d0834" class="">老字号、中国驰名商标、特供、专供、专家推荐、质量免检、无需国家质量检测、免抽检、国家XX领导人推荐、国家XX机关推荐、使用人民币图样(央行批准除外) 等</p><p id="35bebdf8-5bdb-4b64-bea2-64b81d6bb7b8" class=""><strong>与[金融投资]有关的词汇</strong></p><p id="291f2f79-c146-4399-8ff4-f71cff944b4d" class="">收益率、投资回报、保底收益、返本销售、无风险回报、快速回报、高收益回报、升值、众筹等</p><p id="b657c48d-5935-4cf3-afec-af8c86dadac9" class=""><strong>注意事项</strong></p><p id="e09c9947-726c-437c-ba5d-b36f27f0b677" class="">满足以下四类时，则不属于绝对化用语的场景可以在广告物料中使用:</p><p id="3fbc553e-754c-43bc-9e97-637e4e9a998f" class=""><strong>1）客观事实类</strong></p><p id="a365306c-503d-41cb-9c78-04a12c03d678" class="">表示时空顺序的用语或者可被证实的历史事实，未涉及虚假误导用户;如提供了材料证明的“最早、独家、唯一、销量/销的描述售额/市场占有率第一”</p><p id="5795c569-8f2c-4c3e-a2af-c897d24e52e5" class=""><strong>2）产品内部等级划分类</strong></p><p id="1e0e75f6-3157-44bb-a4a0-eb3a677a574b" class="">明确表示为自我比较的程度分级，未涉及侵害其他品牌的权益;如某商品广告称“为消费者提供舒适、高端、顶级3款高品质的商品</p><p id="84019a2d-6901-4cc5-a97d-c80e512d0391" class=""><strong>3）主观感受类</strong></p><p id="7d4066a2-94a9-45da-95c3-9ed605f36013" class="">若语境中有表示个人立场做限制，未涉及侵害其他品牌的权益;是适用于发表者自身的主观感受;如“这是我使用过最好用的乳液我觉得这个是最适合我肤质的</p><p id="086fe995-897d-429f-9d86-18bfe638df0d" class=""><strong>4）愿景追求类</strong></p><p id="f849ed44-25b7-4197-a317-fc0a1b5df375" class="">明示商家的经营理念、追求目标企业愿景的，如“顾客第一”“追求最完美的品质”等描述不属于绝对化范畴。</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
